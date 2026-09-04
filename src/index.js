@@ -1,14 +1,10 @@
-
-
 import dotenv from "dotenv";
-
-
 
 import mongoose from "mongoose";
 import connectDB from "./db/db.js";
 import {app} from "./app.js";
-dotenv.config({Path:".env"});
 
+dotenv.config({Path:"./.env"});
 
 connectDB().then(()=>{
     app.listen(process.env.PORT,()=>{

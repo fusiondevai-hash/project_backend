@@ -14,4 +14,8 @@ app.use(express.urlencoded({extended:true,limit:"20kb"}));  //these are all step
 app.use(express.static("public"));
 app.use(cookieParser());
 
-export default app; // there is other way also to export app which is export {app}
+//routes
+import {router as userRouter} from "./routes/user.route.js";
+app.use("/api/v1/user",userRouter);
+
+export {app}; // there is other way also to export app which is export {app}
